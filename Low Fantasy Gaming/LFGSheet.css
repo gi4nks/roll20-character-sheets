@@ -132,7 +132,6 @@
 	background-color: #E9EDEE;
 }
 
-
 .sheet-rolltemplate-5eDefault .sheet-rt-key {
 	font-weight: bold;
 	font-family: Arial, Helvetica, sans-serif;
@@ -164,7 +163,6 @@
 	padding: 2px 2px 2px 0px
 }
 
-
 .sheet-rolltemplate-5eDefault .sheet-rt-value {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -187,7 +185,6 @@
 	height: 1px;
 }
 
-
 .sheet-rolltemplate-5eDefault .sheet-rt-emote {
 	font-style: italic;
 	font-size: 11px;
@@ -201,7 +198,7 @@
 	margin: 0px 5px 5px 5px;
 }
 
-/*** ROLL TEMPLATE STYLING ENDS HERE **/
+/** ROLL TEMPLATE STYLING ENDS HERE **/
 
 
 /** TOOLTIPS **/
@@ -354,6 +351,7 @@ div[class^="sheet-inventory-page"] {
 	display: none;
 }
 
+input.sheet-tab-settings:checked ~ div.sheet-section-settings,
 input.sheet-tab1:checked ~ div.sheet-section-main,
 input.sheet-tab2:checked ~ div.sheet-section-class,
 input.sheet-tab3:checked ~ div.sheet-section-combat,
@@ -378,6 +376,7 @@ input.sheet-inventorytab7:checked ~ div.sheet-inventory-page7 {
 	display: block;
 }
 
+input.sheet-tab-settings:checked ~ span.sheet-tab-settings,
 input.sheet-tab-wgm:checked ~ span.sheet-tab-wgm,
 input.sheet-tab1:checked ~ span.sheet-tab1,
 input.sheet-tab2:checked ~ span.sheet-tab2,
@@ -405,6 +404,7 @@ input.sheet-inventorytab7:checked ~ span.sheet-inventorytab7 {
 	border-radius: 4px;
 }
 
+input.sheet-tab-settings:checked:hover + span.sheet-tab-settings, input.sheet-tab-settings:checked + span.sheet-tab-settings:hover,
 input.sheet-tab-wgm:checked:hover + span.sheet-tab-wgm, input.sheet-tab-wgm:checked + span.sheet-tab-wgm:hover,
 input.sheet-tab1:checked:hover + span.sheet-tab1, input.sheet-tab1:checked + span.sheet-tab1:hover,
 input.sheet-tab2:checked:hover + span.sheet-tab2, input.sheet-tab2:checked + span.sheet-tab2:hover,
@@ -430,34 +430,31 @@ input.sheet-inventorytab7:checked:hover + span.sheet-inventorytab7, input.sheet-
 	background: goldenrod;
 }
 
+/* Settings and Whisper Toggle Tab */
+
+input.sheet-tab-settings, span.sheet-tab-settings {
+	width: 50px;
+	height: 14px;
+	position: absolute;
+	margin-left: 735px;
+}
+
+span.sheet-tab-settings {
+	font-size: 10px;
+	background: #cecece;
+}
+
 /* Whisper Toggle Tab */
-input.sheet-tab-wgm {
+input.sheet-tab-wgm, span.sheet-tab-wgm {
 	width: 40px;
 	height: 14px;
 	position: absolute;
 	margin-left: 790px;
-	margin-top: 10px;
 }
 
 span.sheet-tab-wgm {
 	font-size: 10px;
-	width: 40px;
-	height: 14px;
 	background: #cecece;
-	position: absolute;
-	margin-left: 790px;
-	margin-top: 10px;
-}
-
-/* Firefox */
-input.sheet-spinhide {
-	-moz-appearance: textfield;
-}
-
-input.sheet-spinhide::-webkit-inner-spin-button, 
-input.sheet-spinhide::-webkit-outer-spin-button{ 
-    -webkit-appearance: none; 
-    margin: 0; 
 }
 
 input.sheet-numlocked {
@@ -1067,7 +1064,7 @@ input.sheet-death-save-success:checked + span.sheet-death-save-success-tab::befo
 }
 
 .sheet-darkmode .sheet-core-stat-label,
-.sheet-darkmode h4 {
+.sheet-darkmode h1, .sheet-darkmode h2, .sheet-darkmode h3, .sheet-darkmode h4, .sheet-darkmode h5, .sheet-darkmode h6 {
 	background-color: #cecece;
 	color: #333;
 }
@@ -1108,6 +1105,7 @@ input.sheet-death-save-success:checked + span.sheet-death-save-success-tab::befo
 	background: #999;
 }
 
+.sheet-darkmode input.sheet-tab-settings:checked ~ span.sheet-tab-settings,
 .sheet-darkmode input.sheet-tab-wgm:checked ~ span.sheet-tab-wgm,
 .sheet-darkmode input.sheet-tab1:checked ~ span.sheet-tab1,
 .sheet-darkmode input.sheet-tab2:checked ~ span.sheet-tab2,
@@ -1133,6 +1131,7 @@ input.sheet-death-save-success:checked + span.sheet-death-save-success-tab::befo
 	background: var(--dark-primary);
 }
 
+.sheet-darkmode input.sheet-tab-settings:checked:hover + span.sheet-tab-settings, .sheet-darkmode input.sheet-tab-settings:checked + span.sheet-tab-settings:hover,
 .sheet-darkmode input.sheet-tab-wgm:checked:hover + span.sheet-tab-wgm, .sheet-darkmode input.sheet-tab-wgm:checked + span.sheet-tab-wgm:hover,
 .sheet-darkmode input.sheet-tab1:checked:hover + span.sheet-tab1, .sheet-darkmode input.sheet-tab1:checked + span.sheet-tab1:hover,
 .sheet-darkmode input.sheet-tab2:checked:hover + span.sheet-tab2, .sheet-darkmode input.sheet-tab2:checked + span.sheet-tab2:hover,
@@ -1492,6 +1491,18 @@ input.sheet-death-save-success:checked + span.sheet-death-save-success-tab::befo
 	word-spacing: -0.43em;
 }
 
+/* Firefox */
+input.sheet-spinhide {
+	-moz-appearance: textfield;
+}
+
+input.sheet-spinhide::-webkit-inner-spin-button, 
+input.sheet-spinhide::-webkit-outer-spin-button{ 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+/* Opera */
 .sheet-opera-only :-o-prefocus,  .sheet-row-r,
 .sheet-rolltemplate-5eDefault .sheet-opera-only :-o-prefocus, .sheet-rolltemplate-5eDefault .sheet-row-r {
 	word-spacing: -0.43em;
